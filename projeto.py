@@ -57,3 +57,36 @@ reabastecimento = [50.0, 120.0, 45.0, 68.32, 82.54, 54.00, 320.00, 400.00, 54.87
 print("Tenha em mente que o teto de gastos com o reabastecimento é de R$ 300,00")
 def registroCustos():
     for i in reabastecimento:
+
+
+
+# item D
+import numpy as np
+
+def rotas():
+    rotas = np.array([
+        [120, 2, 25.00],
+        [250, 3.5, 42.50],
+        [80, 4.2, 15.00],
+        [310, 1.2, 58.00]
+    ])
+
+    km = rotas[:, 0]
+    tempo = rotas[:, 1]
+    pedagio = rotas[:, 2]
+
+    taxa_por_km = 2.50
+
+    custo_total = (km * taxa_por_km) + pedagio
+
+
+    # <8 formatação de texto
+    print(f"{'Rota':<8} | {'KM':<8} | {'Tempo (h)':<10} | {'Pedágio (R$)':<12} | {'Custo Total (R$)':<15}")
+    print("-" * 65)
+
+
+    # =1 para cada rota lida
+    for i in range(len(rotas)):
+        print(f"Rota {i+1:<3} | {km[i]:<8.1f} | {tempo[i]:<10.1f} | R$ {pedagio[i]:<9.2f} | R$ {custo_total[i]:<12.2f}")
+
+rotas ()
